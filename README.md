@@ -3,7 +3,7 @@
 
 #### By _**Nick Sullivan**_
 
-#### _A simple to do list tracker._
+#### __
 
 ## Technologies Used
 
@@ -12,17 +12,18 @@
 * _ASP.NET Core_
 * _Bootstrap_
 * _Razor View Engine_
+* _Entity Framework_
 
 ## Description
 
-_This simple web application allows users input different items that will then be added to a list and displayed. This project is meant to showcase my understanding of ASP.NET Core and MVC web applications._
+__
 
 ## Setup Instructions
 
 * _Open your terminal and navigate to the folder you'd like to download the files into._
 * _Run the command below_
-> git clone https://github.com/nicholassull/to-do-list-c-sharp.git
-* _Navigate to ToDoList.Solution/ToDoList in your terminal._
+> git clone https://github.com/nicholassull/best-restaurants-c-sharp.git
+* _Navigate to BestRestaurants.Solution/BestRestaurants in your terminal._
 * _Run the commands below_
 >dotnet restore
 
@@ -37,7 +38,7 @@ _This simple web application allows users input different items that will then b
 
 ## License
 
-Copyright (c) _02/13/2022_ _by Nick Sullivan_
+Copyright (c) _03/06/2022_ _by Nick Sullivan_
 
 
 _Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:_
