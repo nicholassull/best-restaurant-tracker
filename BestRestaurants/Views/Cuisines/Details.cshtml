@@ -1,9 +1,13 @@
 @{
   Layout = "_Layout";
 }
-@using BestRestaurants.Models
+@using BestRestaurants.Models;
 @model BestRestaurants.Models.Cuisine
 
 <h2>Cuisine Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+<p>@Html.ActionLink("Delete", "Delete", new {id = Model.CuisineId})</p>
+<p>@Html.ActionLink("Edit", "Edit", new {id = Model.CuisineId})</p>
+<p>@Html.ActionLink("Back", "Index")</p>
