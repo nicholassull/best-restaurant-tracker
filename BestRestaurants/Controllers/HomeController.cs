@@ -6,6 +6,7 @@ namespace BestRestaurants.Controllers
   {
     public ActionResult Index()
     {
+      ViewBag.PageTitle = "Home";
       return View();
     }
   }
