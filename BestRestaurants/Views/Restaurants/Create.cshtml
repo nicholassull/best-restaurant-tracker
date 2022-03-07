@@ -18,7 +18,10 @@
     <label for="AvgMealCost">Average Meal Cost</label>
     @Html.TextBoxFor(model => model.AvgMealCost, new { @class = "form-control"})
   </div>
-  
+  <div class="form-group">
+    @Html.LabelFor(model => model.Cuisine)
+    @Html.DropDownList("CuisineId")
+  </div>
   <input type="submit" value="Add new restaurant" />
 }
 
