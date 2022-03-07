@@ -1,0 +1,33 @@
+@{
+  Layout = "_Layout";
+}
+
+@using BestRestaurants.Models;
+@model BestRestaurants.Models.Restaurant
+
+<h2>Edit Restaurant</h2>
+<hr />
+<h4>@Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.RestaurantId)
+  <div class="form-group">
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new { @class = "form-control"})
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Location)
+    @Html.TextBoxFor(model => model.Location, new { @class = "form-control"})
+  </div>
+  <div class="form-group">
+    <label for="AvgMealCost">Average Meal Cost</label>
+    @Html.TextBoxFor(model => model.AvgMealCost, new { @class = "form-control"})
+  </div>
+  <div class="form-group">
+    @Html.LabelFor(model => model.Cuisine)
+    @Html.DropDownList("CuisineId")
+  </div>
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back", "Index")</p>

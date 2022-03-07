@@ -37,5 +37,28 @@ namespace BestRestaurants.Controllers
       var thisRestaurant = _db.Restaurants.FirstOrDefault(model => model.RestaurantId == id); 
       return View(thisRestaurant);
     }
+    public ActionResult Edit(int id)
+    {
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      return View (thisRestaurant);
+    }
+    [HttpPost]
+    public ActionResult Edit(Restaurant restaurant)
+    {
+      _db.Entry(restaurant).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+    public ActionResult Delete(int id)
+    {
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      return View(thisRestaurant);
+    }
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      // Add code!
+    }
   }
 }
