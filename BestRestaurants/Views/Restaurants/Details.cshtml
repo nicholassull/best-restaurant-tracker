@@ -11,6 +11,6 @@
 <p>@Html.DisplayNameFor(model => model.Location): @Html.DisplayFor(model => model.Location)</p>
 <p>Average Meal Cost: @Html.DisplayFor(model => model.AvgMealCost)</p>
 
-<p>@Html.ActionLink("Delete", "Delete", new {id = Model.RestaurantId})</p>
-<p>@Html.ActionLink("Edit", "Edit", new {id = Model.RestaurantId})</p>
-<p>@Html.ActionLink("Back", "Index")</p>
+<button class="btn btn-outline-primary">@Html.ActionLink("Delete", "Delete", new {id = Model.RestaurantId})</button>
+<button class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new {id = Model.RestaurantId})</button>
+<button class="btn btn-outline-primary">@Html.ActionLink("Back", "Index")</button>

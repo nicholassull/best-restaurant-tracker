@@ -4,25 +4,26 @@
 @model BestRestaurants.Models.Restaurant
 
 <h2>Add a new restaurant</h2>
-@using (Html.BeginForm())
-{
-  <div class="form-group">
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name, new { @class = "form-control"})
-  </div>
-  <div class="form-group">
-    @Html.LabelFor(model => model.Location)
-    @Html.TextBoxFor(model => model.Location, new { @class = "form-control"})
-  </div>
-  <div class="form-group">
-    <label for="AvgMealCost">Average Meal Cost</label>
-    @Html.TextBoxFor(model => model.AvgMealCost, new { @class = "form-control"})
-  </div>
-  <div class="form-group">
-    @Html.LabelFor(model => model.Cuisine)
-    @Html.DropDownList("CuisineId")
-  </div>
-  <input type="submit" value="Add new restaurant" />
-}
-
-<p>@Html.ActionLink("Show all restaurants", "Index")</p>
+<div class="my-4">
+  @using (Html.BeginForm())
+  {
+    <div class="form-group">
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+      @Html.LabelFor(model => model.Location)
+      @Html.TextBoxFor(model => model.Location, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+      <label for="AvgMealCost">Average Meal Cost</label>
+      @Html.TextBoxFor(model => model.AvgMealCost, new { @class = "form-control"})
+    </div>
+    <div class="form-group">
+      @Html.LabelFor(model => model.Cuisine)
+      @Html.DropDownList("CuisineId")
+    </div>
+    <input class="btn btn-outline-success" type="submit" value="Add new restaurant" />
+  }
+</div>
+<button class="btn btn-outline-primary">@Html.ActionLink("Show all restaurants", "Index")</button>
