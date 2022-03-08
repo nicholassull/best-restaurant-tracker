@@ -58,7 +58,10 @@ namespace BestRestaurants.Controllers
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      // Add code!
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      _db.Restaurants.Remove(thisRestaurant);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
