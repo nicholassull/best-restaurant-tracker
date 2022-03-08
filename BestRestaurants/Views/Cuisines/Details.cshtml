@@ -7,6 +7,13 @@
 <h2>Cuisine Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<ul id="child-restaurant-ul">
+  @for (int i = 0; i < Model.Restaurants.Count(); i++)
+  {
+    <li>Name: @Html.ActionLink($"{@Model.Restaurants.ElementAt(i).Name}", "Details", "Restaurants", new {id = @Model.Restaurants.ElementAt(i).RestaurantId})</li>
+  }
+</ul>
+
 
 <p>@Html.ActionLink("Delete", "Delete", new {id = Model.CuisineId})</p>
 <p>@Html.ActionLink("Edit", "Edit", new {id = Model.CuisineId})</p>
