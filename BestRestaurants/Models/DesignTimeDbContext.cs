@@ -5,10 +5,10 @@ using System.IO;
 
 namespace BestRestaurants.Models
 {
-  public class BestRestaurantsContextFactory : IDesignTimeDbContextFactory<UniversityRegistrarContext>
+  public class BestRestaurantsContextFactory : IDesignTimeDbContextFactory<BestRestaurantsContext>
   {
 
-    BestRestaurantsContext IDesignTimeDbContextFactory<UniversityRegistrarContext>.CreateDbContext(string[] args)
+    BestRestaurantsContext IDesignTimeDbContextFactory<BestRestaurantsContext>.CreateDbContext(string[] args)
     {
       IConfigurationRoot configuration = new ConfigurationBuilder()
           .SetBasePath(Directory.GetCurrentDirectory())
