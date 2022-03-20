@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace BestRestaurants.Models
@@ -7,11 +9,11 @@ namespace BestRestaurants.Models
   {
     public Cuisine()
     {
-      this.Restaurants = new HashSet<Restaurant>();
+      JoinEntities = new HashSet<CuisineRestaurant>();
     }
     public int CuisineId { get; set; }
     public string Name { get; set; }
 
-    public virtual ICollection<Restaurant> Restaurants { get; set; }
+    public virtual ICollection<CuisineRestaurant> JoinEntities { get; set; }
   }
 }
