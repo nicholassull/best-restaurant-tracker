@@ -91,5 +91,13 @@ namespace BestRestaurants.Controllers
       }
       return RedirectToAction("Index");
     }
+    [HttpPost]
+    public ActionResult DeleteCuisine(int joinId)
+    {
+      var joinEntry = _db.CuisineRestaurant.FirstOrDefault(entry => entry.CuisineRestaurantId == joinId);
+      _db.CuisineRestaurant.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
