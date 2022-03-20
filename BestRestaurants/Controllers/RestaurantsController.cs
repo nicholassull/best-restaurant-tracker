@@ -54,7 +54,9 @@ namespace BestRestaurants.Controllers
     [HttpPost]
     public ActionResult Edit(Restaurant restaurant, int CuisineId)
     {
-      if (CuisineId != 0)
+      bool duplicate = _db.CuisineRestaurant.Any(join => join.CuisineId == CuisineId && join.RestaurantId == restaurant.RestaurantId);
+
+      if (CuisineId != 0 && !duplicate)
       {
         _db.CuisineRestaurant.Add(new CuisineRestaurant() { CuisineId = CuisineId, RestaurantId = restaurant.RestaurantId });
       }
