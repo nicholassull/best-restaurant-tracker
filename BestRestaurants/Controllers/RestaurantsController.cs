@@ -26,10 +26,15 @@ namespace BestRestaurants.Controllers
       return View();
     }
     [HttpPost]
-    public ActionResult Create(Restaurant restaurant)
+    public ActionResult Create(Restaurant restaurant, int CuisineId)
     {
       _db.Restaurants.Add(restaurant);
       _db.SaveChanges();
+      if (CuisineId != 0)
+      {
+        _db.CuisineRestaurant.Add(new CuisineRestaurant() { CuisineId = CuisineId, RestaurantId = restaurant.RestaurantId });
+        _db.SaveChanges();
+      }
       return RedirectToAction("Index");
     }
     public ActionResult Details(int id)

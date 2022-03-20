@@ -1,4 +1,4 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 @model BestRestaurants.Models.Restaurant
@@ -20,10 +20,10 @@
       @Html.TextBoxFor(model => model.AvgMealCost, new { @class = "form-control"})
     </div>
     <div class="form-group">
-      @Html.LabelFor(model => model.Cuisine)
+      @Html.Label("Select")
       @Html.DropDownList("CuisineId")
     </div>
     <input class="btn btn-outline-success" type="submit" value="Add new restaurant" />
   }
 </div>
-<button class="btn btn-outline-primary">@Html.ActionLink("Show all restaurants", "Index")</button> *@
+<button class="btn btn-outline-primary">@Html.ActionLink("Show all restaurants", "Index")</button>
