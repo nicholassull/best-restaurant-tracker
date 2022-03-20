@@ -1,4 +1,4 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 @model BestRestaurants.Models.Restaurant
@@ -7,10 +7,24 @@
 <hr />
 <h3>@Html.DisplayFor(model => model.Name)</h3>
 
-<p>@Html.DisplayNameFor(model => model.Cuisine): @Html.DisplayFor(model => model.Cuisine.Name)</p>
+@if (Model.JoinEntities.Count == 0)
+{
+  <p>This restaurant is not yet associated with a cuisine. Click Add Cuisine bellow.</p>
+}
+else
+{
+  <h4>Cuisines this restaurant serves</h4>
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Cuisine.Name</li>
+    }
+  </ul>
+}
+
 <p>@Html.DisplayNameFor(model => model.Location): @Html.DisplayFor(model => model.Location)</p>
-<p>Average Meal Cost: @Html.DisplayFor(model => model.AvgMealCost)</p>
+<p>@Html.DisplayNameFor(model => model.AvgMealCost): $@Html.DisplayFor(model => model.AvgMealCost)</p>
 
 <button class="btn btn-outline-primary">@Html.ActionLink("Delete", "Delete", new {id = Model.RestaurantId})</button>
 <button class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new {id = Model.RestaurantId})</button>
-<button class="btn btn-outline-primary">@Html.ActionLink("Back", "Index")</button> *@
+<button class="btn btn-outline-primary">@Html.ActionLink("Back", "Index")</button>
