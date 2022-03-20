@@ -25,6 +25,7 @@ else
 <p>@Html.DisplayNameFor(model => model.Location): @Html.DisplayFor(model => model.Location)</p>
 <p>@Html.DisplayNameFor(model => model.AvgMealCost): $@Html.DisplayFor(model => model.AvgMealCost)</p>
 
+<button class="btn btn-outline-primary">@Html.ActionLink("Add Cuisine", "AddCuisine", new {id = Model.RestaurantId})</button>
 <button class="btn btn-outline-primary">@Html.ActionLink("Delete", "Delete", new {id = Model.RestaurantId})</button>
 <button class="btn btn-outline-primary">@Html.ActionLink("Edit", "Edit", new {id = Model.RestaurantId})</button>
 <button class="btn btn-outline-primary">@Html.ActionLink("Back", "Index")</button>
