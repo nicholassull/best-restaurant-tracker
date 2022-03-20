@@ -1,4 +1,4 @@
-@* @{
+@{
   Layout = "_Layout";
 }
 
@@ -16,10 +16,10 @@
 
   @foreach (Restaurant restaurant in Model)
   {
-    <li>@Html.ActionLink($"{restaurant.Name}", "Details", new {id = restaurant.RestaurantId}) | @restaurant.Cuisine.Name </li>
+    <li>@Html.ActionLink($"{restaurant.Name}", "Details", new {id = restaurant.RestaurantId}) </li>
   }
 
   </div>
 
 @Html.ActionLink("Add Restaurant", "Create", new {}, new { @class = "btn btn-outline-primary" })
-@Html.ActionLink("Home", "Index", "Home", new {}, new { @class = "btn btn-outline-primary" }) *@
+@Html.ActionLink("Home", "Index", "Home", new {}, new { @class = "btn btn-outline-primary" })
