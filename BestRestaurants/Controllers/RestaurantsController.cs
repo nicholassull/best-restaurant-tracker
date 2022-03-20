@@ -75,5 +75,21 @@ namespace BestRestaurants.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+    public ActionResult AddCuisine(int id)
+    {
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      return View(thisRestaurant);
+    }
+    [HttpPost]
+    public ActionResult AddCuisine(Restaurant restaurant, int CuisineId)
+    {
+      if (CuisineId != 0)
+      {
+        _db.CuisineRestaurant.Add(new CuisineRestaurant() { CuisineId = CuisineId, RestaurantId = restaurant.RestaurantId });
+        _db.SaveChanges();
+      }
+      return RedirectToAction("Index");
+    }
   }
 }
